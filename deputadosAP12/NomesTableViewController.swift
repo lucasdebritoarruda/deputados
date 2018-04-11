@@ -12,6 +12,7 @@ class NomesTableViewController: UITableViewController {
 
     // MARK: - Properties
     var listaCompleta: [String] = []
+    var dict:[Int:String] = [:]
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class NomesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print(dict)
     }
 
     override func didReceiveMemoryWarning() {

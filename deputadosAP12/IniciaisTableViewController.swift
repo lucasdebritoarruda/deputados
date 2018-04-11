@@ -66,14 +66,22 @@ extension IniciaisTableViewController{
         let y = UserDefaults.standard.object(forKey: x!)
         if let lista = y as? [String]{
             self.listaComNomes = lista
+            let z = UserDefaults.standard.object(forKey: "dicionarioIdNome") as! Data
+            self.idComNome = NSKeyedUnarchiver.unarchiveObject(with: z) as! Dictionary<Int, String>
             self.performSegue(withIdentifier: "SegueLista", sender: self)
         }else{
             downloadNameList(link: links[indexPath.row]) { nomes,ids in
                 self.listaComNomes = nomes
                 self.saveToUserDefaults(row: indexPath.row)
+                var dict = [Int:String]()
                 for(index,element) in ids.enumerated(){
-                    self.idComNome[element] = self.listaComNomes[index]
+                    dict[element] = self.listaComNomes[index]
                 }
+                dict.forEach({ (k,v) in
+                    self.idComNome[k] = v
+                })
+                let encondedDict: Data = NSKeyedArchiver.archivedData(withRootObject: self.idComNome)
+                UserDefaults.standard.set(encondedDict, forKey: "dicionarioIdNome")
                 self.performSegue(withIdentifier: "SegueLista", sender: self)
             }
         }
@@ -87,6 +95,7 @@ extension IniciaisTableViewController{
         if segue.identifier == "SegueLista"{
             let controller = segue.destination as! NomesTableViewController
             controller.listaCompleta = listaComNomes
+            controller.dict = idComNome
             let iniciaisButton = UIBarButtonItem()
             iniciaisButton.title = "Iniciais"
             navigationItem.backBarButtonItem = iniciaisButton
@@ -203,6 +212,6 @@ extension UserDefaults{
         static let wxyz = "W - X - Y - Z"
         static let dicionarioIdNome = "dicionarioIdNome"
     }
-    
 }
+
 
