@@ -1,0 +1,6 @@
+framework module Pods_deputadosAP12 {
+  umbrella header "Pods-deputadosAP12-umbrella.h"
+
+  export *
+  module * { export * }
+}
