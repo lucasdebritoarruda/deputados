@@ -66,7 +66,6 @@ extension IniciaisTableViewController{
         let y = UserDefaults.standard.object(forKey: x!)
         if let lista = y as? [String]{
             self.listaComNomes = lista
-            print("Ei Baitola!")
             self.performSegue(withIdentifier: "SegueLista", sender: self)
         }else{
             downloadNameList(link: links[indexPath.row]) { nomes,ids in
