@@ -22,7 +22,7 @@ class IniciaisTableViewController: UITableViewController {
     var itens = ["A - B - C","C - D - E - F - G - H","H - I - J - K - L","L - M - N - O - P","R - S - T - U - V - W","W - X - Y - Z"]
     var listaComNomes:[String] = [ ]
     var listaComIds:[Int] = [ ]
-    var idComNome: [Int:String] = [:]
+    var idComNome: [String:Int] = [:]
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -67,15 +67,15 @@ extension IniciaisTableViewController{
         if let lista = y as? [String]{
             self.listaComNomes = lista
             let z = UserDefaults.standard.object(forKey: "dicionarioIdNome") as! Data
-            self.idComNome = NSKeyedUnarchiver.unarchiveObject(with: z) as! Dictionary<Int, String>
+            self.idComNome = NSKeyedUnarchiver.unarchiveObject(with: z) as! Dictionary<String, Int>
             self.performSegue(withIdentifier: "SegueLista", sender: self)
         }else{
             downloadNameList(link: links[indexPath.row]) { nomes,ids in
                 self.listaComNomes = nomes
                 self.saveToUserDefaults(row: indexPath.row)
-                var dict = [Int:String]()
-                for(index,element) in ids.enumerated(){
-                    dict[element] = self.listaComNomes[index]
+                var dict = [String:Int]()
+                for(index,element) in self.listaComNomes.enumerated(){
+                    dict[element] = ids[index]
                 }
                 dict.forEach({ (k,v) in
                     self.idComNome[k] = v

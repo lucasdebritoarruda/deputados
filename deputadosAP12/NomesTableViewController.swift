@@ -12,7 +12,7 @@ class NomesTableViewController: UITableViewController {
 
     // MARK: - Properties
     var listaCompleta: [String] = []
-    var dict:[Int:String] = [:]
+    var dict:[String:Int] = [:]
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
