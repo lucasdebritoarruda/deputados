@@ -58,8 +58,14 @@ extension IniciaisTableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = itens[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 16.0)
         return cell
     }
+    
+}
+
+    // MARK: - Navigation
+extension IniciaisTableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let x = tableView.cellForRow(at: indexPath)?.textLabel?.text
@@ -85,11 +91,8 @@ extension IniciaisTableViewController{
                 self.performSegue(withIdentifier: "SegueLista", sender: self)
             }
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-}
-
-    // MARK: - Navigation
-extension IniciaisTableViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SegueLista"{
@@ -103,7 +106,6 @@ extension IniciaisTableViewController{
     }
     
 }
-
 
     // MARK: - Auxiliar functions
 extension IniciaisTableViewController{

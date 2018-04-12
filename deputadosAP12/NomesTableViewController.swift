@@ -23,7 +23,7 @@ class NomesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        print(dict)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +50,35 @@ extension NomesTableViewController{
         }
         nomeCompletoTratado.removeLast()
         cell.textLabel?.text = nomeCompletoTratado
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 16.0)
         return cell
     }
+}
+
+// MARK: - Navigation
+
+extension NomesTableViewController{
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let y = dict[listaCompleta[indexPath.row]]
+        print("https://dadosabertos.camara.leg.br/api/v2/deputados/" + String(describing: y!))
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+}
+
+// MARK: - Auxiliar Functions
+
+extension NomesTableViewController{
+    
+    func dowLoadPreviewData(nome:String){
+        
+        
+        
+    }
+    
 }
 
 extension String {

@@ -16,6 +16,7 @@
 		A05AE65F20788DDC00CA4C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05AE65E20788DDC00CA4C8C /* Assets.xcassets */; };
 		A05AE66220788DDC00CA4C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05AE66020788DDC00CA4C8C /* LaunchScreen.storyboard */; };
 		A06885C1207898370062D866 /* NomesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06885C0207898370062D866 /* NomesTableViewController.swift */; };
+		A0E094B520800795001AC90F /* DeputadoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E094B420800795001AC90F /* DeputadoPreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A05AE66120788DDC00CA4C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A05AE66320788DDC00CA4C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06885C0207898370062D866 /* NomesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomesTableViewController.swift; sourceTree = "<group>"; };
+		A0E094B420800795001AC90F /* DeputadoPreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeputadoPreViewController.swift; sourceTree = "<group>"; };
 		C688081478BDDDB4E60FDD43 /* Pods-deputadosAP12.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deputadosAP12.debug.xcconfig"; path = "Pods/Target Support Files/Pods-deputadosAP12/Pods-deputadosAP12.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				A05AE65620788DDC00CA4C8C /* ViewController.swift */,
 				A01FD7FE207AEF9600399A3F /* IniciaisTableViewController.swift */,
 				A06885C0207898370062D866 /* NomesTableViewController.swift */,
+				A0E094B420800795001AC90F /* DeputadoPreViewController.swift */,
 				A05AE65820788DDC00CA4C8C /* Main.storyboard */,
 				A05AE65E20788DDC00CA4C8C /* Assets.xcassets */,
 				A05AE66020788DDC00CA4C8C /* LaunchScreen.storyboard */,
@@ -228,6 +231,7 @@
 			files = (
 				A05AE65720788DDC00CA4C8C /* ViewController.swift in Sources */,
 				A05AE65520788DDC00CA4C8C /* AppDelegate.swift in Sources */,
+				A0E094B520800795001AC90F /* DeputadoPreViewController.swift in Sources */,
 				A06885C1207898370062D866 /* NomesTableViewController.swift in Sources */,
 				A05AE65D20788DDC00CA4C8C /* deputadosAP12.xcdatamodeld in Sources */,
 				A01FD7FF207AEF9600399A3F /* IniciaisTableViewController.swift in Sources */,
