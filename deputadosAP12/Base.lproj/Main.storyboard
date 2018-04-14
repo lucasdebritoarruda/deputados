@@ -117,13 +117,80 @@
                     <view key="view" contentMode="scaleToFill" id="vFa-KJ-G3J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-eq-F0t">
+                                <rect key="frame" x="110" y="154" width="100" height="104.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fulano de Tal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-yX-5jX">
+                                <rect key="frame" x="16" y="266.5" width="288" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partido - Estado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slh-a1-Avu">
+                                <rect key="frame" x="16" y="294" width="288" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Situação" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx0-fn-nsG">
+                                <rect key="frame" x="16" y="320" width="59.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inicio Mandato" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n0-f2-jk0">
+                                <rect key="frame" x="203.5" y="318" width="100.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-5i-n9h">
+                                <rect key="frame" x="137" y="349" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="seguirDeputadoAction:" destination="goq-Ea-ps2" eventType="touchUpInside" id="5Lp-zH-gN7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4LJ-eq-F0t" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="110" id="19I-UA-SO7"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="137" id="2JR-JL-2Hr"/>
+                            <constraint firstItem="8n0-f2-jk0" firstAttribute="top" secondItem="Slh-a1-Avu" secondAttribute="bottom" constant="6" id="32G-XN-x9d"/>
+                            <constraint firstItem="Slh-a1-Avu" firstAttribute="top" secondItem="eEk-yX-5jX" secondAttribute="bottom" constant="8" id="464-Wk-c4N"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="top" secondItem="Vx0-fn-nsG" secondAttribute="bottom" constant="8" id="5Zr-UB-GcT"/>
+                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="eEk-yX-5jX" secondAttribute="trailing" constant="16" id="9cb-3S-kvn"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="top" secondItem="8n0-f2-jk0" secondAttribute="bottom" constant="10" id="JvD-vh-r1q"/>
+                            <constraint firstItem="Vx0-fn-nsG" firstAttribute="top" secondItem="Slh-a1-Avu" secondAttribute="bottom" constant="8" id="Kuf-0L-EzZ"/>
+                            <constraint firstItem="eEk-yX-5jX" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="16" id="Mme-oH-RWp"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="top" secondItem="Slh-a1-Avu" secondAttribute="bottom" constant="37" id="Oty-OG-Cwf"/>
+                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="Slh-a1-Avu" secondAttribute="trailing" constant="16" id="QQR-xA-T7P"/>
+                            <constraint firstItem="Slh-a1-Avu" firstAttribute="top" secondItem="eEk-yX-5jX" secondAttribute="bottom" constant="8" id="aTF-t7-g0e"/>
+                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="kwv-5i-n9h" secondAttribute="trailing" constant="137" id="fMk-0c-VDw"/>
+                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="4LJ-eq-F0t" secondAttribute="trailing" constant="110" id="fmm-gs-ZC8"/>
+                            <constraint firstItem="Slh-a1-Avu" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="16" id="iBn-Kd-UVf"/>
+                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="bottom" secondItem="kwv-5i-n9h" secondAttribute="bottom" constant="189" id="k1T-8k-Xe8"/>
+                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="8n0-f2-jk0" secondAttribute="trailing" constant="16" id="mAQ-Z7-r38"/>
+                            <constraint firstItem="Vx0-fn-nsG" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="16" id="sEp-mK-G2A"/>
+                            <constraint firstItem="eEk-yX-5jX" firstAttribute="top" secondItem="4LJ-eq-F0t" secondAttribute="bottom" constant="8" id="tbX-71-nCZ"/>
+                            <constraint firstItem="8n0-f2-jk0" firstAttribute="top" secondItem="Slh-a1-Avu" secondAttribute="bottom" constant="6" id="yas-6M-tEo"/>
+                            <constraint firstItem="4LJ-eq-F0t" firstAttribute="top" secondItem="7Nu-3Q-F74" secondAttribute="top" constant="90" id="zTT-tB-Clk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Nu-3Q-F74"/>
                     </view>
+                    <connections>
+                        <outlet property="fotoDeputado" destination="4LJ-eq-F0t" id="2Eo-RQ-bo9"/>
+                        <outlet property="inicioMandatoDeputado" destination="8n0-f2-jk0" id="cFB-t4-Zvc"/>
+                        <outlet property="nomeDeputado" destination="eEk-yX-5jX" id="ocZ-zZ-RAq"/>
+                        <outlet property="partidoEstadoDeputado" destination="Slh-a1-Avu" id="s6W-Vd-4dt"/>
+                        <outlet property="seguirDeputadoOutlet" destination="kwv-5i-n9h" id="7V3-sd-dCM"/>
+                        <outlet property="situacaoDeputado" destination="Vx0-fn-nsG" id="0Ft-JN-4LE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQY-1h-1fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472" y="114"/>
+            <point key="canvasLocation" x="2471.25" y="113.02816901408451"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TW6-H0-6Sl">
