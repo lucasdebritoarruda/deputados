@@ -11,7 +11,14 @@ import UIKit
 class DeputadoPreViewController: UIViewController {
     
     // MARK: - Properties
-    //RECEBER ID DO DEPUTADO PARA FAZER CALCULO DA COR DE FUNDO
+    var foto = ""
+    var nomeCompletoNaoTratado: [String] = []
+    var partido = ""
+    var estado = ""
+    var situacao = ""
+    var inicioMandato = ""
+    
+    var colorIndex = Int()
     
     // MARK: - Outlets
     @IBOutlet weak var fotoDeputado: UIImageView!
@@ -24,12 +31,47 @@ class DeputadoPreViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func seguirDeputadoAction(_ sender: Any) {
+        seguirDeputadoOutlet.setTitle("Deixar de Seguir", for: .selected)
     }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Setando a cor da view  - Inicio
+        
+        if colorIndex%2 == 0{
+            self.view.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 204/255, alpha: 1)
+        }else{
+            self.view.backgroundColor = UIColor.init(red: 204/255, green: 255/255, blue: 204/255, alpha: 1)
+        }
+        
+        // Setando a cor da view  Fim
+        
+        seguirDeputadoOutlet.setTitle("Seguir", for: .normal)
+        
+        // Colocando Foto - inicio
+        let url = URL(string:foto)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.sync {
+                self.fotoDeputado.image = UIImage(data: data!)
+            }
+        }
+        fotoDeputado.layer.cornerRadius = fotoDeputado.frame.height/2
+        fotoDeputado.layer.masksToBounds = true
+        // Colocando Foto - fim
+        
+        //Colocando Nome - Inicio
+        var nomeCompletoTratado = ""
+        for nome in nomeCompletoNaoTratado{
+            nomeCompletoTratado.append(nome.capitalizingFirstLetter() + " ")
+        }
+        nomeCompletoTratado.removeLast()
+        nomeDeputado.text = nomeCompletoTratado
+        partidoEstadoDeputado.text = partido + " " + estado
+        situacaoDeputado.text = situacao
+        inicioMandatoDeputado.text = inicioMandato
+        //Colocando Nome - Fim
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,5 +82,6 @@ class DeputadoPreViewController: UIViewController {
 }
 
 extension DeputadoPreViewController{
-    
+
 }
+

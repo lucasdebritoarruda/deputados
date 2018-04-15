@@ -111,17 +111,17 @@ extension IniciaisTableViewController{
 extension IniciaisTableViewController{
     
     func downloadNameList(link: String,
-                          completion: @escaping ((([String],[Int]) -> Void))){
+                          completion: @escaping ([String],[Int]) -> Void){
         
         let url = URL(string:link)
         
         Alamofire.request(url!)
             .responseJSON { (response) in
                 guard response.result.isSuccess else {
-                    print("Error while fetching tags: \(response.result.error)")
+                    print("Error while fetching tags: \(String(describing: response.result.error))")
                     return
                 }
-                
+                print(response.value)
                 guard let responseJSON = response.result.value as? [String: Any],
                     let results = responseJSON["dados"] as? [[String: Any]],
                     let firstObject = results.first,
@@ -129,6 +129,8 @@ extension IniciaisTableViewController{
                         print("Invalid tag information received from the service")
                         return
                 }
+                
+                
                 
                 let nomes = results.flatMap({ dict in
                     return dict["nome"] as? String
