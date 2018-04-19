@@ -14,6 +14,8 @@ class NomesTableViewController: UITableViewController {
     // MARK: - Properties
     var listaCompleta: [String] = []
     var dict:[String:Int] = [:]
+    let searchController = UISearchController(searchResultsController:nil)
+    var filteredDeputados = [String]()
     
     // MARK: - Properties(dados do deputado selecionado)
     var foto = String()
@@ -29,18 +31,32 @@ class NomesTableViewController: UITableViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Pesquise por um deputado"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Private instance methods
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All"){
+        filteredDeputados = listaCompleta.filter({ (deputado: String) -> Bool in
+            return deputado.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool{
+        return searchController.isActive && !searchBarIsEmpty()
     }
 
 }
@@ -49,19 +65,32 @@ class NomesTableViewController: UITableViewController {
 extension NomesTableViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if isFiltering() {
+            return filteredDeputados.count
+        }
         return listaCompleta.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        let nomeCompletoNaoTratado = listaCompleta[indexPath.row].lowercased().components(separatedBy: " ")
         var nomeCompletoTratado = ""
-        for nome in nomeCompletoNaoTratado{
-            nomeCompletoTratado.append(nome.capitalizingFirstLetter() + " ")
+        
+        if isFiltering(){
+            let nomeCompletoNaoTratado = filteredDeputados[indexPath.row].lowercased().components(separatedBy: " ")
+            for nome in nomeCompletoNaoTratado{
+                nomeCompletoTratado.append(nome.capitalizingFirstLetter() + " ")
+            }
+            nomeCompletoTratado.removeLast()
+            cell.textLabel?.text = nomeCompletoTratado
+        } else {
+            let nomeCompletoNaoTratado = listaCompleta[indexPath.row].lowercased().components(separatedBy: " ")
+            var nomeCompletoTratado = ""
+            for nome in nomeCompletoNaoTratado{
+                nomeCompletoTratado.append(nome.capitalizingFirstLetter() + " ")
+            }
+            nomeCompletoTratado.removeLast()
+            cell.textLabel?.text = nomeCompletoTratado
         }
-        nomeCompletoTratado.removeLast()
-        cell.textLabel?.text = nomeCompletoTratado
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 16.0)
         return cell
     }
@@ -72,7 +101,15 @@ extension NomesTableViewController{
 extension NomesTableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let y = dict[listaCompleta[indexPath.row]]
+        
+        let y:Int?
+        
+        if isFiltering(){
+            y = dict[filteredDeputados[indexPath.row]]
+        } else {
+           y = dict[listaCompleta[indexPath.row]]
+        }
+        
         let link = "https://dadosabertos.camara.leg.br/api/v2/deputados/" + String(describing: y!)
         
         downloadPreviewData(link: link) { (foto,nome,partido,estado,situacao,dataInicioMandato) in
@@ -107,7 +144,7 @@ extension NomesTableViewController{
 }
 
 
-// MARK: - Auxiliar Functions
+// MARK: - Auxiliar Functions to Download data from the API
 
 extension NomesTableViewController{
     
@@ -143,6 +180,13 @@ extension NomesTableViewController{
                 
                 completion(foto,nome,partido,estado,situacao,dataInicioMandato)
         }
+    }
+}
+
+// MARK: - UISearchController Delegate Methods
+extension NomesTableViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
 
