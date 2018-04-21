@@ -26,5 +26,11 @@ class ViewController: UIViewController {
 }
 
 
+class Connectivity {
+    class var isConnectedToInternet:Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
+}
+
 
 

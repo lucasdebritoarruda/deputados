@@ -76,6 +76,7 @@ extension IniciaisTableViewController{
             self.idComNome = NSKeyedUnarchiver.unarchiveObject(with: z) as! Dictionary<String, Int>
             self.performSegue(withIdentifier: "SegueLista", sender: self)
         }else{
+            tableView.allowsSelection = false
             downloadNameList(link: links[indexPath.row]) { nomes,ids in
                 self.listaComNomes = nomes
                 self.saveToUserDefaults(row: indexPath.row)
@@ -89,6 +90,7 @@ extension IniciaisTableViewController{
                 let encondedDict: Data = NSKeyedArchiver.archivedData(withRootObject: self.idComNome)
                 UserDefaults.standard.set(encondedDict, forKey: "dicionarioIdNome")
                 self.performSegue(withIdentifier: "SegueLista", sender: self)
+                tableView.allowsSelection = true
             }
         }
         tableView.deselectRow(at: indexPath, animated: true)
