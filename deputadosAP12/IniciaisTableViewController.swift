@@ -130,8 +130,6 @@ extension IniciaisTableViewController{
                         return
                 }
                 
-                
-                
                 let nomes = results.flatMap({ dict in
                     return dict["nome"] as? String
                 })
@@ -215,6 +213,7 @@ extension UserDefaults{
         static let rstuvw = "R - S - T - U - V - W"
         static let wxyz = "W - X - Y - Z"
         static let dicionarioIdNome = "dicionarioIdNome"
+        static let seguidos = "seguidos"
     }
 }
 

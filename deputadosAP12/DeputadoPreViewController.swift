@@ -17,6 +17,7 @@ class DeputadoPreViewController: UIViewController {
     var estado = ""
     var situacao = ""
     var inicioMandato = ""
+    var seguido: Bool?
     
     var colorIndex = Int()
     
@@ -31,12 +32,28 @@ class DeputadoPreViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func seguirDeputadoAction(_ sender: Any) {
-        seguirDeputadoOutlet.setTitle("Deixar de Seguir", for: .selected)
+        if seguido!{
+            removeFromFollowed()
+            seguido = false
+            seguirDeputadoOutlet.setTitle("Seguir", for: .normal)
+        } else {
+            addToFollowed()
+            seguido = true
+            seguirDeputadoOutlet.setTitle("Deixar de Seguir", for: .normal)
+        }
     }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(seguido!)
+        
+        if seguido!{
+            seguirDeputadoOutlet.setTitle("Deixar de Seguir", for: .normal)
+        } else {
+            seguirDeputadoOutlet.setTitle("Seguir", for: .normal)
+        }
+        
         // Setando a cor da view  - Inicio
         
         if colorIndex%2 == 0{
@@ -46,8 +63,6 @@ class DeputadoPreViewController: UIViewController {
         }
         
         // Setando a cor da view  Fim
-        
-        seguirDeputadoOutlet.setTitle("Seguir", for: .normal)
         
         // Colocando Foto - inicio
         let url = URL(string:foto)
@@ -68,10 +83,11 @@ class DeputadoPreViewController: UIViewController {
         }
         nomeCompletoTratado.removeLast()
         nomeDeputado.text = nomeCompletoTratado
+        //Colocando Nome - Fim
+        
         partidoEstadoDeputado.text = partido + " " + estado
         situacaoDeputado.text = situacao
         inicioMandatoDeputado.text = inicioMandato
-        //Colocando Nome - Fim
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,7 +97,31 @@ class DeputadoPreViewController: UIViewController {
 
 }
 
+// MARK: - Auxiliar Functions
 extension DeputadoPreViewController{
-
+    func addToFollowed(){
+        let x = UserDefaults.standard.object(forKey: UserDefaults.Keys.seguidos)
+        if var listaDeSeguidos = x as? [String]{
+            listaDeSeguidos.append((nomeDeputado.text?.uppercased())!)
+            var listaDeSeguidosOrdenada = listaDeSeguidos
+            listaDeSeguidosOrdenada = listaDeSeguidosOrdenada.sorted { $0 < $1 }
+            print(listaDeSeguidosOrdenada)
+            UserDefaults.standard.set(listaDeSeguidosOrdenada, forKey: UserDefaults.Keys.seguidos)
+        } else {
+            var listaDeSeguidos: [String] = []
+            listaDeSeguidos.append((nomeDeputado.text?.uppercased())!)
+            print(listaDeSeguidos)
+            UserDefaults.standard.set(listaDeSeguidos, forKey: UserDefaults.Keys.seguidos)
+        }
+    }
+    
+    func removeFromFollowed(){
+        let x = UserDefaults.standard.object(forKey: UserDefaults.Keys.seguidos)
+        if var listaDeSeguidos = x as? [String]{
+            listaDeSeguidos = listaDeSeguidos.filter({ $0 != (nomeDeputado.text?.uppercased())! })
+            print(listaDeSeguidos)
+            UserDefaults.standard.set(listaDeSeguidos, forKey: UserDefaults.Keys.seguidos)
+        }
+    }
 }
 

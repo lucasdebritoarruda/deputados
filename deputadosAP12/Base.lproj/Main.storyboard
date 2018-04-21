@@ -87,6 +87,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QOE-ua-Oqf" secondAttribute="trailingMargin" id="3Zz-8U-XfQ"/>
                                         <constraint firstItem="QOE-ua-Oqf" firstAttribute="leading" secondItem="Diy-GF-cD7" secondAttribute="leadingMargin" id="N2h-Jo-Qb0"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="QOE-ua-Oqf" secondAttribute="bottom" constant="4.5" id="jr0-J2-VfN"/>
                                         <constraint firstItem="QOE-ua-Oqf" firstAttribute="top" secondItem="Diy-GF-cD7" secondAttribute="topMargin" constant="4" id="oaB-e8-uNc"/>
@@ -145,8 +146,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-5i-n9h">
-                                <rect key="frame" x="137" y="349" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-5i-n9h">
+                                <rect key="frame" x="16" y="349" width="288" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="seguirDeputadoAction:" destination="goq-Ea-ps2" eventType="touchUpInside" id="0fh-uM-cO2"/>
@@ -156,7 +157,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4LJ-eq-F0t" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="110" id="19I-UA-SO7"/>
-                            <constraint firstItem="kwv-5i-n9h" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="137" id="2JR-JL-2Hr"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="16" id="2JR-JL-2Hr"/>
                             <constraint firstItem="8n0-f2-jk0" firstAttribute="top" secondItem="Slh-a1-Avu" secondAttribute="bottom" constant="6" id="32G-XN-x9d"/>
                             <constraint firstItem="Slh-a1-Avu" firstAttribute="top" secondItem="eEk-yX-5jX" secondAttribute="bottom" constant="8" id="464-Wk-c4N"/>
                             <constraint firstItem="kwv-5i-n9h" firstAttribute="top" secondItem="Vx0-fn-nsG" secondAttribute="bottom" constant="8" id="5Zr-UB-GcT"/>
@@ -167,7 +168,7 @@
                             <constraint firstItem="kwv-5i-n9h" firstAttribute="top" secondItem="Slh-a1-Avu" secondAttribute="bottom" constant="37" id="Oty-OG-Cwf"/>
                             <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="Slh-a1-Avu" secondAttribute="trailing" constant="16" id="QQR-xA-T7P"/>
                             <constraint firstItem="Slh-a1-Avu" firstAttribute="top" secondItem="eEk-yX-5jX" secondAttribute="bottom" constant="8" id="aTF-t7-g0e"/>
-                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="kwv-5i-n9h" secondAttribute="trailing" constant="137" id="fMk-0c-VDw"/>
+                            <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="kwv-5i-n9h" secondAttribute="trailing" constant="16" id="fMk-0c-VDw"/>
                             <constraint firstItem="7Nu-3Q-F74" firstAttribute="trailing" secondItem="4LJ-eq-F0t" secondAttribute="trailing" constant="110" id="fmm-gs-ZC8"/>
                             <constraint firstItem="Slh-a1-Avu" firstAttribute="leading" secondItem="7Nu-3Q-F74" secondAttribute="leading" constant="16" id="iBn-Kd-UVf"/>
                             <constraint firstItem="7Nu-3Q-F74" firstAttribute="bottom" secondItem="kwv-5i-n9h" secondAttribute="bottom" constant="189" id="k1T-8k-Xe8"/>

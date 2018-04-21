@@ -25,6 +25,7 @@ class NomesTableViewController: UITableViewController {
     var situacao = String()
     var dataInicioMandato = String()
     var dicionarioDeputado:[String:Any] = [:]
+    var deputadosSeguidos:[String] = []
     
     var selectedIndex = Int()
     
@@ -135,6 +136,7 @@ extension NomesTableViewController{
             controller.situacao = self.situacao
             controller.inicioMandato = self.dataInicioMandato
             controller.colorIndex = self.selectedIndex
+            controller.seguido = verifyIfFollowed(nome: self.nome)
             let deputadosButton = UIBarButtonItem()
             deputadosButton.title = "Deputados"
             navigationItem.backBarButtonItem = deputadosButton
@@ -181,7 +183,21 @@ extension NomesTableViewController{
                 completion(foto,nome,partido,estado,situacao,dataInicioMandato)
         }
     }
+    
+    func verifyIfFollowed(nome: String) -> Bool{
+        let x = UserDefaults.standard.object(forKey: UserDefaults.Keys.seguidos)
+        if let listaDeSeguidos = x as? [String]{
+            if listaDeSeguidos.contains(nome){
+                return true
+            } else {
+                return false
+            }
+        } else {
+          return false
+        }
+    }
 }
+
 
 // MARK: - UISearchController Delegate Methods
 extension NomesTableViewController: UISearchResultsUpdating{
@@ -199,59 +215,3 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
 }
-
-
-/*
- override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
- 
- // Configure the cell...
- 
- return cell
- }
- */
-
-/*
- // Override to support conditional editing of the table view.
- override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
- // Return false if you do not want the specified item to be editable.
- return true
- }
- */
-
-/*
- // Override to support editing the table view.
- override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
- if editingStyle == .delete {
- // Delete the row from the data source
- tableView.deleteRows(at: [indexPath], with: .fade)
- } else if editingStyle == .insert {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
- 
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
- // Return false if you do not want the item to be re-orderable.
- return true
- }
- */
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
