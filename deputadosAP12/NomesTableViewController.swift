@@ -37,6 +37,7 @@ class NomesTableViewController: UITableViewController {
         searchController.searchBar.placeholder = "Pesquise por um deputado"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,23 +75,12 @@ extension NomesTableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        var nomeCompletoTratado = ""
+
         
         if isFiltering(){
-            let nomeCompletoNaoTratado = filteredDeputados[indexPath.row].lowercased().components(separatedBy: " ")
-            for nome in nomeCompletoNaoTratado{
-                nomeCompletoTratado.append(nome.capitalizingFirstLetter() + " ")
-            }
-            nomeCompletoTratado.removeLast()
-            cell.textLabel?.text = nomeCompletoTratado
+            cell.textLabel?.text = filteredDeputados[indexPath.row].lowercased().capitalized
         } else {
-            let nomeCompletoNaoTratado = listaCompleta[indexPath.row].lowercased().components(separatedBy: " ")
-            var nomeCompletoTratado = ""
-            for nome in nomeCompletoNaoTratado{
-                nomeCompletoTratado.append(nome.capitalizingFirstLetter() + " ")
-            }
-            nomeCompletoTratado.removeLast()
-            cell.textLabel?.text = nomeCompletoTratado
+            cell.textLabel?.text = listaCompleta[indexPath.row].lowercased().capitalized
         }
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 16.0)
         return cell

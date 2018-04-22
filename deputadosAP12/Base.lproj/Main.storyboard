@@ -17,7 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-qb-jdK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="okB-gt-9aW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FV5-Nq-ZKq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FzO-qb-jdK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2cZ-fm-yqL"/>
+                            <constraint firstItem="FzO-qb-jdK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ojo-kW-8St"/>
+                            <constraint firstItem="FzO-qb-jdK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZWR-BH-sPc"/>
+                            <constraint firstItem="FzO-qb-jdK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ixw-tG-7YN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Deputados Federais" id="HbI-JT-lK3">
@@ -27,10 +43,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="FzO-qb-jdK" id="Vq8-aE-Whw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.80000000000001" y="115.59220389805098"/>
+            <point key="canvasLocation" x="255" y="115.14084507042254"/>
         </scene>
         <!--Iniciais Table View Controller-->
         <scene sceneID="LSn-cO-fjR">
