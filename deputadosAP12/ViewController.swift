@@ -52,11 +52,24 @@ extension ViewController{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = deputadosSeguidos[indexPath.row].lowercased().capitalized
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deputadosSeguidos = deputadosSeguidos.filter({ $0 != tableView.cellForRow(at: indexPath)?.textLabel?.text?.uppercased() })
+            UserDefaults.standard.set(deputadosSeguidos, forKey: UserDefaults.Keys.seguidos)
+            self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+            showTableViewPlaceHolder()
+        }
+    }
+    
 }
 // MARK: - Auxiliar Functions
 extension ViewController{
@@ -67,7 +80,7 @@ extension ViewController{
             
             let messageLabel = UILabel(frame: rect)
             
-            messageLabel.text = "Você não está seguindo nenhum político no momento. Toque no icone + para adicioná-los."
+            messageLabel.text = "Você não está seguindo nenhum deputado no momento. Toque no icone + para adicioná-los."
             
             messageLabel.textColor = UIColor.black
             
