@@ -25,7 +25,7 @@ class NomesTableViewController: UITableViewController {
     var situacao = String()
     var dataInicioMandato = String()
     var dicionarioDeputado:[String:Any] = [:]
-    var deputadosSeguidos:[String] = []
+    
     
     var selectedIndex = Int()
     

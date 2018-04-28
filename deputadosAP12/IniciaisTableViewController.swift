@@ -216,6 +216,7 @@ extension UserDefaults{
         static let wxyz = "W - X - Y - Z"
         static let dicionarioIdNome = "dicionarioIdNome"
         static let seguidos = "seguidos"
+        static let followedPictures = "followedPictures"
     }
 }
 

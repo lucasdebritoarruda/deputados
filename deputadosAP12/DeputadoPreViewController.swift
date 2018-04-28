@@ -28,6 +28,9 @@ class DeputadoPreViewController: UIViewController {
     @IBOutlet weak var situacaoDeputado: UILabel!
     @IBOutlet weak var inicioMandatoDeputado: UILabel!
     @IBOutlet weak var seguirDeputadoOutlet: UIButton!
+    @IBOutlet weak var backGroundImage: UIImageView!
+    @IBOutlet weak var whitePanel: UIView!
+    
     
     
     // MARK: - Actions
@@ -54,15 +57,7 @@ class DeputadoPreViewController: UIViewController {
             seguirDeputadoOutlet.setTitle("Seguir", for: .normal)
         }
         
-        // Setando a cor da view  - Inicio
-        
-        if colorIndex%2 == 0{
-            self.view.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 204/255, alpha: 1)
-        }else{
-            self.view.backgroundColor = UIColor.init(red: 204/255, green: 255/255, blue: 204/255, alpha: 1)
-        }
-        
-        // Setando a cor da view  Fim
+        whitePanel.layer.cornerRadius = 12
         
         // Colocando Foto - inicio
         let url = URL(string:foto)
@@ -72,8 +67,11 @@ class DeputadoPreViewController: UIViewController {
                 self.fotoDeputado.image = UIImage(data: data!)
             }
         }
-        fotoDeputado.layer.cornerRadius = fotoDeputado.frame.height/2
+        fotoDeputado.layer.cornerRadius = fotoDeputado.layer.frame.height/2
         fotoDeputado.layer.masksToBounds = true
+        fotoDeputado.layer.borderWidth = 3.0
+        fotoDeputado.layer.borderColor = UIColor.white.cgColor
+        fotoDeputado.layer.backgroundColor = UIColor.white.cgColor
         // Colocando Foto - fim
         
         //Colocando Nome - Inicio
@@ -84,10 +82,10 @@ class DeputadoPreViewController: UIViewController {
         nomeCompletoTratado.removeLast()
         nomeDeputado.text = nomeCompletoTratado
         //Colocando Nome - Fim
-        
+        inicioMandatoDeputado.text = fixedData(data: inicioMandato)
         partidoEstadoDeputado.text = partido + " " + estado
         situacaoDeputado.text = situacao
-        inicioMandatoDeputado.text = inicioMandato
+        backGroundImage.image = UIImage(named:estado+".jpg")
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,11 +105,13 @@ extension DeputadoPreViewController{
             listaDeSeguidosOrdenada = listaDeSeguidosOrdenada.sorted { $0 < $1 }
             print(listaDeSeguidosOrdenada)
             UserDefaults.standard.set(listaDeSeguidosOrdenada, forKey: UserDefaults.Keys.seguidos)
+            salvandoFotoDeputado()
         } else {
             var listaDeSeguidos: [String] = []
             listaDeSeguidos.append((nomeDeputado.text?.uppercased())!)
             print(listaDeSeguidos)
             UserDefaults.standard.set(listaDeSeguidos, forKey: UserDefaults.Keys.seguidos)
+            salvandoFotoDeputado()
         }
     }
     
@@ -122,6 +122,34 @@ extension DeputadoPreViewController{
             print(listaDeSeguidos)
             UserDefaults.standard.set(listaDeSeguidos, forKey: UserDefaults.Keys.seguidos)
         }
+    }
+    
+    func salvandoFotoDeputado(){
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        
+        if documentsPath.count > 0{
+            let documentsDirectory = documentsPath[0]
+            let savePath = documentsDirectory + "/" + (nomeDeputado.text?.uppercased())! + ".jpg"
+            
+            do{
+                try UIImageJPEGRepresentation(fotoDeputado.image!, 1)?.write(to: URL(fileURLWithPath: savePath))
+            } catch {
+                print("Erro Salvando imagem!")
+            }
+        }
+    }
+    
+    func fixedData(data:String) -> String{
+        var x = data.components(separatedBy: "-")
+        x.reverse()
+        var y = ""
+        for parte in x {
+            y.append(parte)
+            y.append("/")
+        }
+        y.removeLast()
+        
+        return y
     }
 }
 

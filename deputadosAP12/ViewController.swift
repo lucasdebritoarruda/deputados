@@ -52,8 +52,11 @@ extension ViewController{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+
         cell.textLabel?.text = deputadosSeguidos[indexPath.row].lowercased().capitalized
+        
         return cell
     }
     
@@ -100,7 +103,7 @@ extension ViewController{
             tableView.backgroundView = nil
             
         }
-    }
+    } 
     
 }
 
