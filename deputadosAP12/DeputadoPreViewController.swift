@@ -30,6 +30,7 @@ class DeputadoPreViewController: UIViewController {
     @IBOutlet weak var seguirDeputadoOutlet: UIButton!
     @IBOutlet weak var backGroundImage: UIImageView!
     @IBOutlet weak var whitePanel: UIView!
+    @IBOutlet weak var blurView: UIView!
     
     
     
@@ -57,7 +58,24 @@ class DeputadoPreViewController: UIViewController {
             seguirDeputadoOutlet.setTitle("Seguir", for: .normal)
         }
         
-        whitePanel.layer.cornerRadius = 12
+        //Efeito blur na imagem do background - inicio
+        if !UIAccessibilityIsReduceTransparencyEnabled(){
+            blurView.backgroundColor = .clear
+            
+            let blurEffect = UIBlurEffect(style: .regular)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.blurView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+            blurEffectView.alpha = 0.6
+            blurView.addSubview(blurEffectView)
+        } else {
+            blurView.alpha = 0
+        }
+        //Efeito blur na imagem do background - Fim
+        
+        //Transformando whitePanel em greyPanel - Inicio
+        whitePanel.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 0.8)
+        //Transformando whitePanel em greyPanel - Fim
         
         // Colocando Foto - inicio
         let url = URL(string:foto)
@@ -82,10 +100,12 @@ class DeputadoPreViewController: UIViewController {
         nomeCompletoTratado.removeLast()
         nomeDeputado.text = nomeCompletoTratado
         //Colocando Nome - Fim
+        
         inicioMandatoDeputado.text = fixedData(data: inicioMandato)
         partidoEstadoDeputado.text = partido + " " + estado
         situacaoDeputado.text = situacao
         backGroundImage.image = UIImage(named:estado+".jpg")
+        whitePanel.layer.cornerRadius = 12
     }
 
     override func didReceiveMemoryWarning() {
