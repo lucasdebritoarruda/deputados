@@ -29,7 +29,6 @@ class DeputadoPreViewController: UIViewController {
     @IBOutlet weak var inicioMandatoDeputado: UILabel!
     @IBOutlet weak var seguirDeputadoOutlet: UIButton!
     @IBOutlet weak var backGroundImage: UIImageView!
-    @IBOutlet weak var whitePanel: UIView!
     @IBOutlet weak var blurView: UIView!
     
     
@@ -73,10 +72,6 @@ class DeputadoPreViewController: UIViewController {
         }
         //Efeito blur na imagem do background - Fim
         
-        //Transformando whitePanel em greyPanel - Inicio
-        whitePanel.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 0.8)
-        //Transformando whitePanel em greyPanel - Fim
-        
         // Colocando Foto - inicio
         let url = URL(string:foto)
         DispatchQueue.global().async {
@@ -105,7 +100,6 @@ class DeputadoPreViewController: UIViewController {
         partidoEstadoDeputado.text = partido + " " + estado
         situacaoDeputado.text = situacao
         backGroundImage.image = UIImage(named:estado+".jpg")
-        whitePanel.layer.cornerRadius = 12
     }
 
     override func didReceiveMemoryWarning() {

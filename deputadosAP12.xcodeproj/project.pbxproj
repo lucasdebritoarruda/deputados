@@ -14,7 +14,7 @@
 		A02966C420943AF900EEA25E /* AM.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A02966B620943AEC00EEA25E /* AM.jpg */; };
 		A02966C520943AF900EEA25E /* AP.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A02966B820943AEC00EEA25E /* AP.jpg */; };
 		A02966C620943AF900EEA25E /* BA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A02966A720943AEA00EEA25E /* BA.jpg */; };
-		A02966C720943AF900EEA25E /* CE.png in Resources */ = {isa = PBXBuildFile; fileRef = A02966B320943AEB00EEA25E /* CE.png */; };
+		A02966C720943AF900EEA25E /* CE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A02966B320943AEB00EEA25E /* CE.jpg */; };
 		A02966C820943AF900EEA25E /* ES.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A02966AC20943AEA00EEA25E /* ES.jpg */; };
 		A02966C920943AF900EEA25E /* GO.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A02966BD20943AEC00EEA25E /* GO.jpg */; };
 		A02966CB20943AF900EEA25E /* MA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A02966B420943AEB00EEA25E /* MA.jpg */; };
@@ -48,6 +48,7 @@
 /* Begin PBXFileReference section */
 		1F6B6C74E0D0652B2B0A8FC6 /* Pods-deputadosAP12.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deputadosAP12.release.xcconfig"; path = "Pods/Target Support Files/Pods-deputadosAP12/Pods-deputadosAP12.release.xcconfig"; sourceTree = "<group>"; };
 		83F4ED60E1C7C62959EFF766 /* Pods_deputadosAP12.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_deputadosAP12.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01C224D20A5059A00135C99 /* DF.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DF.jpg; sourceTree = "<group>"; };
 		A01FD7FE207AEF9600399A3F /* IniciaisTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciaisTableViewController.swift; sourceTree = "<group>"; };
 		A02966A720943AEA00EEA25E /* BA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BA.jpg; sourceTree = "<group>"; };
 		A02966A820943AEA00EEA25E /* AL.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AL.jpg; sourceTree = "<group>"; };
@@ -60,7 +61,7 @@
 		A02966AF20943AEB00EEA25E /* RO.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RO.jpg; sourceTree = "<group>"; };
 		A02966B120943AEB00EEA25E /* RR.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RR.jpg; sourceTree = "<group>"; };
 		A02966B220943AEB00EEA25E /* PI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PI.jpg; sourceTree = "<group>"; };
-		A02966B320943AEB00EEA25E /* CE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CE.png; sourceTree = "<group>"; };
+		A02966B320943AEB00EEA25E /* CE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CE.jpg; sourceTree = "<group>"; };
 		A02966B420943AEB00EEA25E /* MA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MA.jpg; sourceTree = "<group>"; };
 		A02966B520943AEB00EEA25E /* PB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PB.jpg; sourceTree = "<group>"; };
 		A02966B620943AEC00EEA25E /* AM.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AM.jpg; sourceTree = "<group>"; };
@@ -116,9 +117,10 @@
 				A02966B620943AEC00EEA25E /* AM.jpg */,
 				A02966B820943AEC00EEA25E /* AP.jpg */,
 				A02966A720943AEA00EEA25E /* BA.jpg */,
-				A02966B320943AEB00EEA25E /* CE.png */,
+				A02966B320943AEB00EEA25E /* CE.jpg */,
 				A02966AC20943AEA00EEA25E /* ES.jpg */,
 				A02966BD20943AEC00EEA25E /* GO.jpg */,
+				A01C224D20A5059A00135C99 /* DF.jpg */,
 				A02966B420943AEB00EEA25E /* MA.jpg */,
 				A02966A920943AEA00EEA25E /* MG.jpg */,
 				A02966BB20943AEC00EEA25E /* MS.jpg */,
@@ -261,7 +263,7 @@
 				A02966CF20943AF900EEA25E /* PA.JPG in Resources */,
 				A02966DA20943AF900EEA25E /* SE.jpg in Resources */,
 				A02966D620943AF900EEA25E /* RO.jpg in Resources */,
-				A02966C720943AF900EEA25E /* CE.png in Resources */,
+				A02966C720943AF900EEA25E /* CE.jpg in Resources */,
 				A02966CE20943AF900EEA25E /* MT.jpg in Resources */,
 				A02966C520943AF900EEA25E /* AP.jpg in Resources */,
 				A05AE66220788DDC00CA4C8C /* LaunchScreen.storyboard in Resources */,

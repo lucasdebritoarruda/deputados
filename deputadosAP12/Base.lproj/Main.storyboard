@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -149,64 +150,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCO-WR-3VE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wCO-WR-3VE">
+                                <rect key="frame" x="0.0" y="32" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Jo-FN-dyU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jo-FN-dyU">
+                                <rect key="frame" x="0.0" y="32" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7U-fG-xnP">
-                                <rect key="frame" x="16" y="342" width="288" height="206"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fulano de Tal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-yX-5jX">
-                                        <rect key="frame" x="8" y="59" width="272" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Partido - Estado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slh-a1-Avu">
-                                        <rect key="frame" x="8" y="77" width="112" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Situação" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx0-fn-nsG">
-                                        <rect key="frame" x="8" y="108" width="272" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inicio Mandato" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n0-f2-jk0">
-                                        <rect key="frame" x="8" y="129" width="101" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-5i-n9h">
-                                        <rect key="frame" x="102" y="168" width="178" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="seguirDeputadoAction:" destination="goq-Ea-ps2" eventType="touchUpInside" id="0fh-uM-cO2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-eq-F0t">
-                                <rect key="frame" x="25" y="281" width="114" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4LJ-eq-F0t">
+                                <rect key="frame" x="103" y="167.5" width="114" height="113.5"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fulano de Tal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-yX-5jX">
+                                <rect key="frame" x="8" y="290.5" width="304" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Partido - Estado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slh-a1-Avu">
+                                <rect key="frame" x="8" y="312" width="304" height="17.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Situação" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx0-fn-nsG">
+                                <rect key="frame" x="8" y="351.5" width="304" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inicio Mandato" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n0-f2-jk0">
+                                <rect key="frame" x="8" y="333" width="304" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-5i-n9h">
+                                <rect key="frame" x="8" y="378" width="304" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="seguirDeputadoAction:" destination="goq-Ea-ps2" eventType="touchUpInside" id="0fh-uM-cO2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vx0-fn-nsG" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" multiplier="0.03" id="5xu-AS-DNS"/>
+                            <constraint firstItem="8n0-f2-jk0" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" multiplier="1.08" id="6fa-HP-EtT"/>
+                            <constraint firstItem="eEk-yX-5jX" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" multiplier="0.95" id="913-ZR-F0i"/>
+                            <constraint firstItem="Slh-a1-Avu" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="BSI-67-gzu"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" multiplier="1.255" id="GRu-vc-ftI"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" multiplier="0.065" id="GTV-HZ-zEV"/>
+                            <constraint firstItem="Slh-a1-Avu" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" multiplier="0.03" id="HK9-NE-vGv"/>
+                            <constraint firstItem="4LJ-eq-F0t" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" multiplier="0.355" id="Hso-jE-WSG"/>
+                            <constraint firstItem="4LJ-eq-F0t" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" multiplier="0.71" id="I0l-6I-eaY"/>
+                            <constraint firstItem="wCO-WR-3VE" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" id="IXT-dx-et8"/>
+                            <constraint firstItem="8n0-f2-jk0" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" multiplier="0.03" id="Img-Ge-hBk"/>
+                            <constraint firstItem="3Jo-FN-dyU" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" id="LYS-VQ-dz2"/>
+                            <constraint firstItem="wCO-WR-3VE" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="Mo4-oz-H4d"/>
+                            <constraint firstItem="Slh-a1-Avu" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" multiplier="1.015" id="NAS-e9-qtQ"/>
+                            <constraint firstItem="3Jo-FN-dyU" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" id="Qm3-YD-3zl"/>
+                            <constraint firstItem="wCO-WR-3VE" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" id="RLi-aw-wax"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="V1f-YM-BoE"/>
+                            <constraint firstItem="Vx0-fn-nsG" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" multiplier="0.95" id="W4I-A9-su2"/>
+                            <constraint firstItem="wCO-WR-3VE" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" id="WO4-33-7Kd"/>
+                            <constraint firstItem="eEk-yX-5jX" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" multiplier="0.035" id="WVK-b7-K8P"/>
+                            <constraint firstItem="4LJ-eq-F0t" firstAttribute="height" secondItem="vFa-KJ-G3J" secondAttribute="height" multiplier="0.2" id="dOG-xz-JIM"/>
+                            <constraint firstItem="4LJ-eq-F0t" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="dxy-at-Qrh"/>
+                            <constraint firstItem="8n0-f2-jk0" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" multiplier="0.95" id="jYC-ww-2tq"/>
+                            <constraint firstItem="eEk-yX-5jX" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="mTm-ly-JYy"/>
+                            <constraint firstItem="Vx0-fn-nsG" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="oqI-Om-JKA"/>
+                            <constraint firstItem="3Jo-FN-dyU" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" id="qfG-Td-iWK"/>
+                            <constraint firstItem="kwv-5i-n9h" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" multiplier="0.95" id="rVH-Oe-OfI"/>
+                            <constraint firstItem="eEk-yX-5jX" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" multiplier="0.95" id="sOB-GC-NOc"/>
+                            <constraint firstItem="8n0-f2-jk0" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="vnL-p4-r05"/>
+                            <constraint firstItem="Vx0-fn-nsG" firstAttribute="centerY" secondItem="7Nu-3Q-F74" secondAttribute="centerY" multiplier="1.139" id="vyB-I9-STy"/>
+                            <constraint firstItem="Slh-a1-Avu" firstAttribute="width" secondItem="vFa-KJ-G3J" secondAttribute="width" multiplier="0.95" id="wzY-78-iKU"/>
+                            <constraint firstItem="3Jo-FN-dyU" firstAttribute="centerX" secondItem="7Nu-3Q-F74" secondAttribute="centerX" id="zJa-SI-ksl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Nu-3Q-F74"/>
                     </view>
                     <connections>
@@ -218,7 +238,6 @@
                         <outlet property="partidoEstadoDeputado" destination="Slh-a1-Avu" id="s6W-Vd-4dt"/>
                         <outlet property="seguirDeputadoOutlet" destination="kwv-5i-n9h" id="pyR-W7-1bo"/>
                         <outlet property="situacaoDeputado" destination="Vx0-fn-nsG" id="0Ft-JN-4LE"/>
-                        <outlet property="whitePanel" destination="j7U-fG-xnP" id="l3a-qG-nm4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQY-1h-1fr" userLabel="First Responder" sceneMemberID="firstResponder"/>

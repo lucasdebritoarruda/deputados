@@ -93,12 +93,14 @@ extension NomesTableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let y:Int?
+        var y:Int?
         
         if isFiltering(){
             y = dict[filteredDeputados[indexPath.row]]
+            print("Hey")
         } else {
            y = dict[listaCompleta[indexPath.row]]
+            print("You")
         }
         
         let link = "https://dadosabertos.camara.leg.br/api/v2/deputados/" + String(describing: y!)
