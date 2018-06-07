@@ -11,6 +11,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Info Table View Controller-->
+        <scene sceneID="exl-o7-s4p">
+            <objects>
+                <tableViewController id="nL3-xu-sWo" customClass="infoTableViewController" customModule="deputadosAP12" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SI9-Dr-kpg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" id="D9q-Eq-hGK">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D9q-Eq-hGK" id="0ak-Yw-CdS">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nL3-xu-sWo" id="d64-S9-UBk"/>
+                            <outlet property="delegate" destination="nL3-xu-sWo" id="oiX-nE-wF1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iew-A8-Bmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="875"/>
+        </scene>
         <!--Deputados Federais-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -48,7 +76,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Deputados Federais" id="HbI-JT-lK3">
-                        <barButtonItem key="leftBarButtonItem" systemItem="fastForward" id="90O-qe-bIR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.png" id="90O-qe-bIR">
+                            <connections>
+                                <segue destination="nL3-xu-sWo" kind="show" id="vwl-Xy-Mj6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="XEp-ss-K9K">
                             <connections>
                                 <segue destination="km0-W5-kvf" kind="show" id="j1r-BT-Sec"/>
@@ -186,7 +218,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-5i-n9h">
                                 <rect key="frame" x="8" y="378" width="304" height="37"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="0.1565949241" blue="0.1080398935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="seguirDeputadoAction:" destination="goq-Ea-ps2" eventType="touchUpInside" id="0fh-uM-cO2"/>
                                 </connections>
@@ -263,4 +297,7 @@
             <point key="canvasLocation" x="-593" y="116"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info.png" width="24" height="24"/>
+    </resources>
 </document>

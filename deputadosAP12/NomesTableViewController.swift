@@ -76,7 +76,6 @@ extension NomesTableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
 
-        
         if isFiltering(){
             cell.textLabel?.text = filteredDeputados[indexPath.row].lowercased().capitalized
         } else {
@@ -97,12 +96,9 @@ extension NomesTableViewController{
         
         if isFiltering(){
             y = dict[filteredDeputados[indexPath.row]]
-            print("Hey")
         } else {
-           y = dict[listaCompleta[indexPath.row]]
-            print("You")
+            y = dict[listaCompleta[indexPath.row]]
         }
-        
         let link = "https://dadosabertos.camara.leg.br/api/v2/deputados/" + String(describing: y!)
         
         downloadPreviewData(link: link) { (foto,nome,partido,estado,situacao,dataInicioMandato) in

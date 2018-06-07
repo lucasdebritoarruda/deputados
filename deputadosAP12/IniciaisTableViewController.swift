@@ -72,7 +72,7 @@ extension IniciaisTableViewController{
         let y = UserDefaults.standard.object(forKey: x!)
         if let lista = y as? [String]{
             self.listaComNomes = lista
-            let z = UserDefaults.standard.object(forKey: "dicionarioIdNome") as! Data
+            let z = UserDefaults.standard.object(forKey: UserDefaults.Keys.dicionarioIdNome) as! Data
             self.idComNome = NSKeyedUnarchiver.unarchiveObject(with: z) as! Dictionary<String, Int>
             self.performSegue(withIdentifier: "SegueLista", sender: self)
         }else{
@@ -88,7 +88,7 @@ extension IniciaisTableViewController{
                     self.idComNome[k] = v
                 })
                 let encondedDict: Data = NSKeyedArchiver.archivedData(withRootObject: self.idComNome)
-                UserDefaults.standard.set(encondedDict, forKey: "dicionarioIdNome")
+                UserDefaults.standard.set(encondedDict, forKey: UserDefaults.Keys.dicionarioIdNome)
                 self.performSegue(withIdentifier: "SegueLista", sender: self)
                 tableView.allowsSelection = true
             }

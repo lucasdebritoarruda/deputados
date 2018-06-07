@@ -42,6 +42,9 @@
 		A05AE65F20788DDC00CA4C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05AE65E20788DDC00CA4C8C /* Assets.xcassets */; };
 		A05AE66220788DDC00CA4C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05AE66020788DDC00CA4C8C /* LaunchScreen.storyboard */; };
 		A06885C1207898370062D866 /* NomesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06885C0207898370062D866 /* NomesTableViewController.swift */; };
+		A07F61F820C97AFA00216AA7 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A07F61F420C979D000216AA7 /* info@2x.png */; };
+		A07F61F920C97AFA00216AA7 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = A07F61F520C979D000216AA7 /* info.png */; };
+		A07F61FC20C97D6B00216AA7 /* infoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F61FB20C97D6B00216AA7 /* infoTableViewController.swift */; };
 		A0E094B520800795001AC90F /* DeputadoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E094B420800795001AC90F /* DeputadoPreViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +88,10 @@
 		A05AE66120788DDC00CA4C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A05AE66320788DDC00CA4C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06885C0207898370062D866 /* NomesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomesTableViewController.swift; sourceTree = "<group>"; };
+		A07F61F420C979D000216AA7 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		A07F61F520C979D000216AA7 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		A07F61FA20C97BE600216AA7 /* info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@3x.png"; sourceTree = "<group>"; };
+		A07F61FB20C97D6B00216AA7 /* infoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoTableViewController.swift; sourceTree = "<group>"; };
 		A0E094B420800795001AC90F /* DeputadoPreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeputadoPreViewController.swift; sourceTree = "<group>"; };
 		C688081478BDDDB4E60FDD43 /* Pods-deputadosAP12.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deputadosAP12.debug.xcconfig"; path = "Pods/Target Support Files/Pods-deputadosAP12/Pods-deputadosAP12.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +119,9 @@
 		A02966732094310F00EEA25E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A07F61FA20C97BE600216AA7 /* info@3x.png */,
+				A07F61F420C979D000216AA7 /* info@2x.png */,
+				A07F61F520C979D000216AA7 /* info.png */,
 				A02966AA20943AEA00EEA25E /* AC.jpg */,
 				A02966A820943AEA00EEA25E /* AL.jpg */,
 				A02966B620943AEC00EEA25E /* AM.jpg */,
@@ -166,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				A05AE65820788DDC00CA4C8C /* Main.storyboard */,
+				A07F61FB20C97D6B00216AA7 /* infoTableViewController.swift */,
 				A05AE65420788DDC00CA4C8C /* AppDelegate.swift */,
 				A05AE65620788DDC00CA4C8C /* ViewController.swift */,
 				A01FD7FE207AEF9600399A3F /* IniciaisTableViewController.swift */,
@@ -258,6 +269,7 @@
 				A02966D320943AF900EEA25E /* PR.jpg in Resources */,
 				A02966D920943AF900EEA25E /* SC.jpg in Resources */,
 				A02966CB20943AF900EEA25E /* MA.jpg in Resources */,
+				A07F61F920C97AFA00216AA7 /* info.png in Resources */,
 				A02966C620943AF900EEA25E /* BA.jpg in Resources */,
 				A02966C320943AF900EEA25E /* AL.jpg in Resources */,
 				A02966CF20943AF900EEA25E /* PA.JPG in Resources */,
@@ -280,6 +292,7 @@
 				A02966C920943AF900EEA25E /* GO.jpg in Resources */,
 				A02966D120943AF900EEA25E /* PE.jpg in Resources */,
 				A05AE65A20788DDC00CA4C8C /* Main.storyboard in Resources */,
+				A07F61F820C97AFA00216AA7 /* info@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +360,7 @@
 				A05AE65720788DDC00CA4C8C /* ViewController.swift in Sources */,
 				A05AE65520788DDC00CA4C8C /* AppDelegate.swift in Sources */,
 				A0E094B520800795001AC90F /* DeputadoPreViewController.swift in Sources */,
+				A07F61FC20C97D6B00216AA7 /* infoTableViewController.swift in Sources */,
 				A06885C1207898370062D866 /* NomesTableViewController.swift in Sources */,
 				A05AE65D20788DDC00CA4C8C /* deputadosAP12.xcdatamodeld in Sources */,
 				A01FD7FF207AEF9600399A3F /* IniciaisTableViewController.swift in Sources */,
