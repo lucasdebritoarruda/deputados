@@ -34,10 +34,46 @@
                             <outlet property="delegate" destination="nL3-xu-sWo" id="oiX-nE-wF1"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="aCe-k4-qKM" kind="show" identifier="infoSegue" id="1zD-3q-USV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iew-A8-Bmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="255" y="875"/>
+        </scene>
+        <!--Info Detail View Controller-->
+        <scene sceneID="MNF-wg-Br4">
+            <objects>
+                <viewController id="aCe-k4-qKM" customClass="infoDetailViewController" customModule="deputadosAP12" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P7q-oW-wqx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PY3-UD-RiA">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PY3-UD-RiA" firstAttribute="trailing" secondItem="OGx-UC-sD5" secondAttribute="trailing" id="RYG-ac-MiY"/>
+                            <constraint firstItem="PY3-UD-RiA" firstAttribute="leading" secondItem="OGx-UC-sD5" secondAttribute="leading" id="XAc-nP-zGX"/>
+                            <constraint firstItem="PY3-UD-RiA" firstAttribute="top" secondItem="OGx-UC-sD5" secondAttribute="top" id="fXn-kR-7kQ"/>
+                            <constraint firstItem="PY3-UD-RiA" firstAttribute="bottom" secondItem="OGx-UC-sD5" secondAttribute="bottom" id="h6c-er-Rh6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OGx-UC-sD5"/>
+                    </view>
+                    <connections>
+                        <outlet property="infoText" destination="PY3-UD-RiA" id="eD6-hc-B8i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y5L-qb-Eot" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="875"/>
         </scene>
         <!--Deputados Federais-->
         <scene sceneID="tne-QT-ifu">
