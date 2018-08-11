@@ -107,6 +107,18 @@ extension ViewController{
     
 }
 
+// MARK: - Navigation
+
+extension ViewController{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "deputadoDetalhes", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+}
+
 
 // MARK: - Auxiliar Classes
 class Connectivity {
@@ -114,6 +126,7 @@ class Connectivity {
         return NetworkReachabilityManager()!.isReachable
     }
 }
+
 
 
 
